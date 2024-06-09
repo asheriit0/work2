@@ -1,0 +1,369 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block modal_cart %}
+{% include "includes/cart_button.html" %}
+{% endblock  %}
+
+{% block nav-text %}
+<div class="ul1">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a type="pointer" class="nav-link" aria-current="page" href="#about">О компании</a>
+        </li>
+        <li class="nav-item">
+            <a type="pointer" class="nav-link" href="#delivery">Оплата и доставка</a>
+        </li>
+        <li class="nav-item">
+            <a type="pointer" class="nav-link" href="#contacts">Контакты</a>
+        </li>
+    </ul>
+</div>
+{% endblock nav-text %}
+
+
+{% block content %}
+<div id="a" class="about">
+    <div class="about__container">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-12 md-auto mb-0">
+                    <div class="card about_main">
+                        <img src="{% static "deps/images/about_photo2.png" %}" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <div class="col-6 mt-3 mb-0">
+                    <div div class="card about_sup">
+                        <img src="{% static "deps/images/about_photo1.png" %}" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <div class="col-6 mt-3 mb-0">
+                    <div div class="card about_sup">
+                        <img src="{% static "deps/images/about_photo3.png" %}" class="img-fluid" alt="...">
+                    </div>
+                </div>
+
+
+
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mb-sm-0" style="margin-top: 50px !important;">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                        </div>
+                        <div class="col-8">
+                            Забронируйте оборудование
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mb-sm-0" style="margin-top: 50px !important;">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                        </div>
+                        <div class="col-8">
+                            Забронируйте оборудование
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mb-sm-0" style="margin-top: 50px !important;">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                        </div>
+                        <div class="col-8">
+                            Забронируйте оборудование
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 mt-3 mb-sm-0" style="margin-top: 50px !important;">
+                    <div class="row">
+
+                        <div class="col-4">
+                            <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                        </div>
+                        <div class="col-8">
+                            Забронируйте оборудование
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="portfolio" class="portfolio">
+    <div class="portfolio__container container ">
+        <h2 class="portfolio__title _title" style="font-size: 35px; font-weight: 800;">
+            Каталог
+        </h2>
+        <div class="portfolio__block">
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-6 col-lg-4 col-xl-3 mt-3 mb-sm-0">
+                        <div class="card cat" style="width: 15rem;">
+                            <img src="{% static "deps/images/cat1.png" %}" class="card-img-top" alt="...">
+                            <div class="card-body"
+                                style="height: 120px; margin-top: auto; display: flex; align-items:center; justify-content: center;">
+                                <p class="card-text">Аренда VR-очков</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-4 col-xl-3 mt-3 mb-sm-0">
+                        <div class="card cat" style="width: 15rem;">
+                            <img src="{% static "deps/images/cat2.png" %}" class="card-img-top" alt="...">
+                            <div class="card-body"
+                                style="height: 120px; margin-top: auto; display: flex; align-items:center; justify-content: center;">
+                                <p class="card-text">Аренда игровых приставок</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="about" class="portfolio">
+    <div class="portfolio__container container ">
+        <h2 class="portfolio__title _title" style="font-size: 35px; font-weight: 800;">
+            О сервисе
+        </h2>
+        <div class="portfolio__block">
+            <div class="text-center text_service" style="font-size: 30px;">
+                HOME GAMES — это современный сервис аренды нужных вещей без залога и бесплатной
+                страховкой. Уникальная система проверки клиентов позволяет брать дорогостоящие вещи без
+                залога. Бесплатная страховка спасет вас от непредвиденных компенсация в случае поломок. Мы
+                трепетно относимся к каждому клиенту и поддерживаем высокий уровень
+                сервиса на протяжении всего срока аренды. Наши вещи понадобятся для отпуска, праздника, в
+                деловую поездку, или уже на месте в командировку, для детей и интересного время
+                препровождения с семьей и друзьями.
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="portfolio__container container ">
+    <h2 class="portfolio__title _title" style="font-size: 35px; font-weight: 800;">
+        Хиты аренды
+    </h2>
+    <div class="portfolio__block">
+        <div class="text-center">
+            <div class="row">
+                <div class="col-6 col-lg-4 col-xl-4 mt-3 mb-sm-0">
+                    <div class="card prod" style="width: 18rem;">
+                        <img src="{% static "deps/images/product1.png" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sony Playstation 5</h5>
+                            <p class="card-text">Цена за сутки от<br>650р</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: auto;">Арендовать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 col-xl-4 mt-3 mb-sm-0">
+                    <div class="card prod" style="width: 18rem;">
+                        <img src="{% static "deps/images/product2.png" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sony Playstation 4</h5>
+                            <p class="card-text">Цена за сутки от<br>400р</p>
+                            <a href="#" class="btn btn-primary" style="margin-top: auto;">Арендовать</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4 col-xl-4 mt-3 mb-sm-0">
+                    <div class="card prod" style="width: 18rem;">
+                        <img src="{% static "deps/images/product3.png" %}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sony Playstation VR</h5>
+                            <p class="card-text">Цена за сутки от<br>800р</p>
+                            <a href="#" class="btn btn-primary"
+                                style="margin-top: auto; align-items: flex-end;">Арендовать</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="delivery" class="portfolio">
+    <div class="portfolio__container container ">
+        <h2 class="portfolio__title _title" style="font-size: 35px; font-weight: 800;">
+            Как пользоваться сервисом HOME GAMES
+        </h2>
+        <div class="portfolio__block">
+            <div class="text-center">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-4 mt-3 mb-sm-0">
+                        <div class="row">
+
+                            <div class="col-4">
+                                <img class="howto_icon" src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                            </div>
+                            <div class="col-8">
+
+                                Забронируйте оборудование по телефону, в мессенджере или на сайте
+
+                                Определитесь с выбором и датами, используя удобный сайт и календарь
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="reviews">
+    <div class="reviews__container _container">
+        <h2 class="portfolio__title _title" style="font-size: 35px; font-weight: 800;">
+            Отзывы наших клиентов
+        </h2>
+        <div class="reviews__block">
+            <div class="reviews__item">
+                <div class="reviews__name">Anastasia_Goncharova</div>
+                <div class="reviews__text">Отличный исполнитель, сделал все качественно и в разы быстрее
+                    изначально обговоренных сроков. Видно, что профессионал своего дела. Будем работать
+                    дальше.
+                </div>
+                <div class="reviews__logo">
+                    <img src="static/img/" alt="">
+                </div>
+            </div>
+            <div class="reviews__item">
+                <div class="reviews__name">Anastasia_Goncharova</div>
+                <div class="reviews__text">Отличный исполнитель, сделал все качественно и в разы быстрее
+                    изначально обговоренных сроков. Видно, что профессионал своего дела. Будем работать
+                    дальше.
+                </div>
+                <div class="reviews__logo">
+                    <img src="static/img/" alt="">
+                </div>
+            </div>
+            <div class="reviews__item">
+                <div class="reviews__name">Anastasia_Goncharova</div>
+                <div class="reviews__text">Отличный исполнитель, сделал все качественно и в разы быстрее
+                    изначально обговоренных сроков. Видно, что профессионал своего дела. Будем работать
+                    дальше.
+                </div>
+                <div class="reviews__logo">
+                    <img src="static/img/" alt="">
+                </div>
+            </div>
+            <div class="reviews__item">
+                <div class="reviews__name">Anastasia_Goncharova</div>
+                <div class="reviews__text">Отличный исполнитель, сделал все качественно и в разы быстрее
+                    изначально обговоренных сроков. Видно, что профессионал своего дела. Будем работать
+                    дальше.
+                </div>
+                <div class="reviews__logo">
+                    <img src="static/img/" alt="">
+                </div>
+            </div>
+            <div class="reviews__item">
+                <div class="reviews__name">Anastasia_Goncharova</div>
+                <div class="reviews__text">Отличный исполнитель, сделал все качественно и в разы быстрее
+                    изначально обговоренных сроков. Видно, что профессионал своего дела. Будем работать
+                    дальше.
+                </div>
+                <div class="reviews__logo">
+                    <img src="static/img/" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="reviews__btn">
+            <a href="https://kwork.ru/user/teabag1332">Смотреть все отзывы</a>
+        </div>
+    </div>
+</div>
+<div id="contacts" class="connection">
+    <div class="connection__container _container">
+        <div class="connection__title">Остались вопросы?</div>
+        <div class="connection__btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop">+7 924 192-66-57
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
