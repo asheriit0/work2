@@ -1,0 +1,173 @@
+{% load static %}
+{% load goods_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "deps/css/my_css.css" %}">
+    <!-- Стиль footer-a для главной страницы -->
+    {% block css %}
+
+    {% endblock %}
+    <!-- Favicons for different platforms -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "deps/favicon/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "deps/favicon/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "deps/favicon/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "deps/favicon/site.webmanifest" %}">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <header>
+        <nav class="header navbar navbar-expand-lg bg-black-body-tertiary py-3 fixed-top">
+            <div class="container-fluid _container">
+                <div class="logo">
+    
+                    <a style="cursor: pointer;" href="{% url "main:index" %}">HOME GAMES</a>
+                </div>
+                {% comment %} <div class="ul2 small-picture">
+                    <ul class="navbar-nav" style="flex-direction: row;">
+                        <li class="nav-item">
+                            <a type="pointer" class="nav-link" aria-current="page" href="#about"><img class="nav_icon"
+                                    src="{% static "deps/icons/HG_search.svg" %}" alt=""></a>
+                        </li>
+                        <li class="nav-item">
+                            <a type="pointer" class="nav-link" href="#delivery"><img class="nav_icon"
+                                    src="{% static "deps/icons/HG_account.svg" %}" alt=""></a>
+                        </li>
+                        <li class="nav-item">
+                            <a type="pointer" class="nav-link" id="modalButton" aria-expanded="false"><img class="nav_icon"
+                                    src="{% static "deps/icons/HG_cart.svg" %}" alt="">
+                                    <span id="goods-in-cart-count">{{ carts.total_quantity }}</span>
+                                </a>
+                        </li>
+                    </ul>
+                </div> {% endcomment %}
+                <button class="navbar-toggler" style="height: 80px;" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span><img src="{% static "deps/images/b1.png" %}" alt=""></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class="dropdown">
+                        <button class="btn hed btn-secondary dropdown-toggle btn" style='background: #000000; border: none;' type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Каталог товаров
+                        </button>
+                        <ul class="dropdown-menu" style='background: #ffffff; margin-left: 20px;' data-bs-theme="dark">
+                            {% tag_categories as categories %}
+                            {% for category in categories %}
+                                <li><a class="dropdown-item catalog text-black" href="{% url "catalog:index" category.slug %}">{{category.name}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% block nav-text %}
+                    {% endblock nav-text %}
+                    <div class="ul2 big-picture">
+                        <ul class="navbar-nav">
+                            <li class="nav-item dropdown dropstart">
+                                <a class="nav-link dropdown text-black" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="nav_icon"
+                                        src="{% static "deps/icons/HG_search.svg" %}" alt="">
+                                </a>
+                                <ul class="dropdown-menu" style='background: #ffffff; width: 300px !important;'>
+                                    <li><a class="dropdown-item text-black" href="#">
+                                        <form class="d-flex" role="search" action="{% url "catalog:search" %}" method="get">
+                                            <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                                            <button class="btn text-black" type="submit">Поиск</button>
+                                        </form>
+                                    </a></li>
+                                </ul>
+                            </li>
+                            {% comment %} <li class="nav-item">
+                                <a type="pointer" class="nav-link" aria-current="page" href="#about"></a>
+                            </li> {% endcomment %}
+                            {% if not user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link  text-white" href="{% url "user:login" %}"> 
+                                    <img class="nav_icon" style="height: 25
+                                    px; width: 25px;" src="{% static "deps/icons/account.svg" %}" alt=""></a></a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item dropdown ">
+                                <a class="nav-link dropdown text-black" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img class="nav_icon"
+                                        src="{% static "deps/icons/HG_account.svg" %}" alt=""></a>
+                                </a>
+                                <ul class="dropdown-menu" style='background: #ffffff;'>
+                                    <li><a class="dropdown-item  text-black" href="carts/cart.html">Корзина</a></li>
+                                    <li><a class="dropdown-item  text-black" href="{% url "user:profile" %}">Личный кабинет</a>
+                                    </li>
+                                    {% if user.is_admin or user.is_staff %}
+                                        <li><a class="dropdown-item  text-black" href="{% url "admin:index" %}">Админ панель</a></li>
+                                    {% endif %}
+                                    <li><a href=""></a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item  text-black" href="{% url "user:logout" %}">Выйти</a></li>
+                                </ul>
+                            </li>
+                        {% endif %}
+                        {% block modal_cart %}{% endblock  %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="content">
+
+        {% include "includes/notifications.html" %}
+        {% block content %}{% endblock %}
+
+
+        <footer class="footer">
+            <div class="footer__container _container">
+                <div class="footer__left">
+                    <div class="footer__logo"><span>HOME GAMES</span></div>
+                    <div class="footer__text">
+                        <a href="#about"></a>
+                        <a href="#about">разработано andrew_contact</a>
+                        <a href="#about">© Все права защищены</a>
+                    </div>
+                </div>
+                <ul class="footer__center">
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#delivery">Оплата и доставка</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+                <div class="footer__right">
+                    <a href=""><img src="{% static "deps/images/whatsapp.png" %}" alt=""></a>
+                    <a href="https://t.me/asheriit0"><img src="{% static "deps/images/tg.png" %}" alt=""></a>
+                </div>
+                <div class="footer__text__dynamic">
+                    <a href="#about"></a>
+                    <br>
+                    <a href="#about">разработано andrew_contact</a>
+                    <br>
+                    <a href="#about">© Все права защищены</a>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+    
+
+    <script src="{% static "deps/js/jquery/jquery-3.7.0.min.js" %}"></script>
+    <script src="{% static "deps/js/jquery-ajax.js" %}"></script>
+    <script src="{% static "deps/js/bootstrap/bootstrap.bundle.min.js" %}"></script>
+</body>
+
+</html>
